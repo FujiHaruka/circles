@@ -12,14 +12,19 @@ circle: {
 */
 
 window.onload = function () {
-  drawCircles()
+  drawCircles(10)
 }
 
-function drawCircles () {
+function onClickRender () {
+  let select = document.getElementById('select')
+  let value = select.value
+  drawCircles(Number(value))
+}
+
+function drawCircles (number) {
   let canvas = document.getElementById('canvas')
   let ctx = canvas.getContext('2d')
 
-  let number = 10
   let width = 400
   let height = 300
   let maxRadius = 50

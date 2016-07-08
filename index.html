@@ -19,17 +19,82 @@
         border: 2px solid blue;
         color: blue;
         padding: 20px;
-        margin: auto;
-        margin-top: 20px;
+        margin: 20px;
         text-align: center;
         width: 100px;
         cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+      .button:hover {
+        color: rgb(0, 0, 220);
+        border-color: rgb(0, 0, 220);
+      }
+      .button:active {
+        background-color: rgba(0, 0, 255, 0.1)
+      }
+      .select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100px;
+        padding: 20px;
+        border: 2px solid blue;
+        color: blue;
+        background-color: white;
+        font-size: 1em;
+        text-align: center;
+      }
+      .select-group {
+        margin: 20px;
+        position: relative;
+      }
+      .select-group:after {
+        position: absolute;
+        top: 0;
+        right: 8px;
+        bottom: 0;
+
+        width: 0;
+        height: 0;
+        margin: auto;
+
+        content: '';
+
+        border-top: 8px solid blue;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+      }
+      .buttons {
+        display: flex;
+        width: 400px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
       }
     </style>
     <div class="main">
       <canvas id="canvas" width="400" height="300"></canvas>
-      <div class="button" onclick="drawCircles()">
-        Render
+      <div class="buttons">
+        <div class="select-group">
+          <select class="select" id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="button" onclick="onClickRender()">
+          Render
+        </div>
       </div>
     </div>
   </body>

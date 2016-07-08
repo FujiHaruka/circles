@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Circles</title>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <style>
+      .main {
+        padding: 30px;
+      }
+      #canvas {
+        display: block;
+        margin: auto;
+        border: 1px solid #aaa;
+      }
+      .button {
+        border: 2px solid blue;
+        color: blue;
+        padding: 20px;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        width: 100px;
+        cursor: pointer;
+      }
+    </style>
+    <div class="main">
+      <canvas id="canvas" width="400" height="300"></canvas>
+      <div class="button" onclick="drawCircles()">
+        Render
+      </div>
+    </div>
+  </body>
+</html>

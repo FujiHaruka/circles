@@ -21,6 +21,19 @@ function onClickRender () {
   drawCircles(Number(value))
 }
 
+function onClickDownload () {
+  let canvas = document.getElementById('canvas')
+  let dataUrl = canvas.toDataURL('image/jpeg')
+  if (!dataUrl.startsWith('data:image/jpeg')) {
+    console.error('not jpeg!')
+  }
+
+  let link = document.createElement('a')
+  link.href = dataUrl
+  link.download = 'hoge.jpg'
+  link.click()
+}
+
 function drawCircles (number) {
   let canvas = document.getElementById('canvas')
   let ctx = canvas.getContext('2d')
@@ -32,6 +45,8 @@ function drawCircles (number) {
   let circles = makeCircles(number, width, height, maxRadius, minRadius)
 
   ctx.clearRect(0, 0, width, height)
+  ctx.fillStyle = '#fff'
+  ctx.fillRect(0, 0, width, height)
 
   for (let i = 0; i < circles.length; i++) {
     draw(ctx, circles[i])
